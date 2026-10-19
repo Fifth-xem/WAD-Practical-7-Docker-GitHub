@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Student Management System</h1>
+        <p>MongoDB Integration using Node.js, Express.js and Mongoose</p>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2 id="form-title">Add New Student</h2>
+
+            <form id="student-form">
+                <input type="hidden" id="student-id">
+
+                <label for="name">Student Name</label>
+                <input type="text" id="name" placeholder="Enter student name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter email address" required>
+
+                <label for="course">Course</label>
+                <input type="text" id="course" placeholder="Enter course name" required>
+
+                <label for="year">Year of Study</label>
+                <select id="year" required>
+                    <option value="">Select year</option>
+                    <option value="1">First Year</option>
+                    <option value="2">Second Year</option>
+                    <option value="3">Third Year</option>
+                    <option value="4">Fourth Year</option>
+                    <option value="5">Fifth Year</option>
+                    <option value="6">Sixth Year</option>
+                </select>
+
+                <div class="form-buttons">
+                    <button type="submit" id="submit-button">Add Student</button>
+                    <button type="button" id="cancel-button" hidden>Cancel Edit</button>
+                </div>
+            </form>
+
+            <p id="message" role="status"></p>
+        </section>
+
+        <section class="list-section">
+            <h2>Registered Students</h2>
+            <button type="button" id="refresh-button">Refresh List</button>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Course</th>
+                            <th>Year</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="students-list">
+                        <tr>
+                            <td colspan="5">Loading students...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
